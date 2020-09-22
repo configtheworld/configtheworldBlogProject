@@ -36,18 +36,18 @@
 			<!--COMMENT SECTION-->
 <div class="container">
 	
-<div class="jumbotron" style="background-color:#2F3336;">
+<div class="jumbotron" style="background-color:#2F3336;overflow: auto;">
 	<h3 class="w-25">
 		Comments
 	</h3>
 	<!--Comment lıst-->
 	<%post.comments.forEach(function(comments){%>
 	
-		<div class="container rounded" style="background-color:#353637;width:40rem;margin-top:2;margin-bottom:2px;">
-			<div class="row">
-				<h6 class="w-25">
-					<%=comments.commentUser.name%> : 
-				</h6><p class="w-75"> <%=comments.commentBody %> </p>
+		<div class="container rounded cikisyok" style="background-color:#353637;margin-top:2;margin-bottom:2px;">
+			<div class="row cikisyok" style="overflow: auto;">
+				<p class="w-15">
+					<b><%=comments.commentUser.name%></b>  
+				</p><p class="w-85"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<%=comments.commentBody %></p>
 			</div>
 		</div>
 	<%});%>

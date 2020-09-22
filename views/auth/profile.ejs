@@ -41,10 +41,10 @@
 		
 		<div class="container rounded "style="background-image: linear-gradient(rgba(55,55,55,0.8), rgba(55,55,55,0.8)), url('<%=post.postimage%>');background-position: center;background-repeat: no-repeat;background-size: cover;height:auto;width:18rem;margin-top:15px;max-height:250px;">
 			<div >
-				<div class="col col-4" style="margin:2rem;">
-					<h3>
+				<div class="col col-8" style="margin:2rem;">
+					<h6>
 						<%=post.postname.substring(0,46)%>
-					</h3>
+					</h6>
 				</div>
 				<div class="row justify-content-around"style="margin-bottom:1rem;">
 					<%if(currentUser && post.author.id.equals(currentUser._id)|| currentUser && currentUser.isAdmin){%>
