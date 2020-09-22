@@ -1,0 +1,31 @@
+<%- include("../partials/header") %>
+
+<div class="container jumbotron">
+  <h1>Edit <%=post.postname%></h1>
+	
+	<form action="/posts/<%=post._id%>?_method=PUT" method="POST">
+		<div class="form-group">
+			<input type="text" name="postname"id="postname" value="<%=post.postname%>" class="form-control">
+		</div>
+		<div class="form-group">
+			<img src="<%=post.postimage%>" height="150px;"width="auto">
+			<input type="text" name="postimage"id="postimage" value="<%=post.postimage%>" class="form-control" >
+		</div>
+		<div class="form-group">
+			<textarea type="textarea" name="postbody" rows="10" class="form-control" id="postbody"><%=post.postbody%></textarea>
+		</div>
+		<div class="form-group">
+		<button class="btn btn-secondary">
+			Update!
+		</button>
+		</div>
+	</form>
+	<div class="d-flex justify-content-start">
+		<a href="/posts"><button class="btn btn-secondary">Go Back</button></a>
+	</div>
+	
+		
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,39 @@
+<%- include("partials/header") %>
+
+  <% if(currentUser){ %>
+<!--//bunu eger giriş yapıldıysa göster-->
+<div class="container">
+	<div class="jumbotron">
+  <h1>Hello <%=currentUser.username%> create a post</h1>
+  <p>You can inspire someone!</p>
+  <p><a class="btn btn-secondary btn-lg" href="/posts/new" role="button">Create Your Post</a></p>
+	</div>
+</div>
+<%}%>
+
+
+<% posts.reverse().forEach(function(post){%>
+<div class="container cikisyok" >
+	<div class="jumbotron"style="background-image: linear-gradient(rgba(55,55,55,0.8), rgba(55,55,55,0.8)), url('<%=post.postimage%>');background-position: center;background-repeat: no-repeat;background-size: cover;">
+		<h1><%=post.postname %></h1>
+		
+		
+		<div>
+			
+			<h5>
+			<%=post.postbody.substring(0,150)%><br>...<br><a href="/posts/<%=post._id%>">
+			<p>Read More</p></a>
+		</h5>	
+			</div>
+		
+		
+		<em>
+			<%=post.created.toDateString() %>
+		</em>
+	</div>
+</div>
+<% }) %>
+
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configtheworld</title>
+	  <base href="/">
+	  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+	  
+	  <link rel="stylesheet" href="/public/css/config.css">
+	  
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+	<script src="https://use.fontawesome.com/f379e8fda0.js"></script>
+<!-- JS, Popper.js, and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+   
+  </head>
+	
+	
+  <body class="text-center">
+	  
+<div>
+<nav class="container navbar navbar-expand-lg navbar-dark shadow rounded" style="background-color:#2F3336;">
+	<div class="container ">
+		<div class="scale d-flex justify-content-between">
+  <a class="navbar-brand" href="/">ConfigtheWorld</a>
+		
+		
+  <button style="border:0px;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+			
+		</div>
+
+  <div class="collapse navbar-collapse " id="navbarNav">
+    <ul class="navbar-nav navbar-right d-flex">
+      <li class="nav-item">
+        <a class="nav-link" href="/posts"> Posts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts/new">Create a Post</a>
+      </li>
+		  <% if(!currentUser){ %>
+						<li class="nav-item">
+							<a class="nav-link" href="/login">Login</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/register">Sign up</a>
+						</li>
+						<% } else { %>
+							<li class="nav-item ">
+								<a class="nav-link disabled" href="/profiles/<%=currentUser._id%>"aria-disabled="true">Signed in as:
+									<%= currentUser.username %>
+						<% if(currentUser.isAdmin){%>
+								<p style="color:grey;">
+									 *Admin view*
+								</p>
+									</a>
+								<%}%>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/profiles/<%=currentUser._id%>">Profile</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/logout">Logout</a>
+							</li>
+							<% } %> 
+		
+    </ul>
+  </div>
+</div>
+
+</nav>
+	
+	<div class="container" style="width:353px;">
+		<%if(error && error.length >0){ %>
+		<div class="alert alert-danger" role="alert">
+			<%= error %>
+		</div>
+		<%}%>
+		<%if(success && success.length >0){ %>
+		<div class="alert alert-success" role="alert">
+			<%= success %>
+		</div>
+		<%}%>
+	</div>
+	
+	
+	

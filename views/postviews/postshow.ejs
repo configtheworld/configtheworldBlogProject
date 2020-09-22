@@ -1,0 +1,80 @@
+<%- include("../partials/header") %>
+
+
+	<div class="container cikisyok" >
+	<div class="jumbotron"style="background-image: linear-gradient(rgba(55,55,55,0.8), rgba(55,55,55,0.8)), url('<%=post.postimage%>');background-position: center;background-repeat: no-repeat;background-size: cover;">
+		
+		<%if(currentUser && post.author.id.equals(currentUser._id)|| currentUser && currentUser.isAdmin){%>
+			<div class="row justify-content-end">
+				<a href="/posts/<%=post._id%>/edit" style="margin-right:30px;"><button class="btn btn-secondary">Edit</button></a>
+		<form action="/posts/<%=post._id%>?_method=DELETE" method="POST" style="margin-right:40px;">
+			<button class="btn btn-secondary">
+			<i style="font-size:11px;margin-left:3px;" class="trash alternate icon"></i>delete
+			</button>
+		</form>
+		</div>
+			<%}%>
+		
+		
+		<h1><%=post.postname %></h1>
+		
+		
+		<div>
+			
+			<h5>
+			<%=post.postbody%>
+			</h5>	
+		</div>
+		
+		
+		<em>
+			Submitted by <%=post.author.username%> at <%=post.created.toDateString() %>
+		</em>
+		</div>
+	</div>
+
+			<!--COMMENT SECTION-->
+<div class="container">
+	
+<div class="jumbotron" style="background-color:#2F3336;">
+	<h3 class="w-25">
+		Comments
+	</h3>
+	<!--Comment lıst-->
+	<%post.comments.forEach(function(comments){%>
+	
+		<div class="container rounded" style="background-color:#353637;width:40rem;margin-top:2;margin-bottom:2px;">
+			<div class="row">
+				<h6 class="w-25">
+					<%=comments.commentUser.name%> : 
+				</h6><p class="w-75"> <%=comments.commentBody %> </p>
+			</div>
+		</div>
+	<%});%>
+	<div class="container">
+		<h4 class="w-25">
+			Make a Comment
+		</h4>
+	<!--Comment form-->
+	<form class="d-flex align-items-center flex-column" action="/posts/<%=post._id%>" method="POST">
+		<div class="form-group" style="width:300px;">
+            <input class="form-control" type="text" name="commentBody" placeholder="make a comment to <%=post.postname%>">
+        </div>
+		<div class="form-group"style="width:170px;">
+            <button class="btn btn-primary btn-block">Submit!</button>
+        </div>
+	</form>
+	</div>
+	
+</div>	
+	
+	
+</div>
+
+	
+
+	
+	<a class="btn btn-secondary"href="/posts" style="margin-top:100px;">back</a>
+
+
+<%- include("../partials/footer") %>

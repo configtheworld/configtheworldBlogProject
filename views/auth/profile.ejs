@@ -1,0 +1,79 @@
+<%- include("../partials/header") %>
+
+<div class="container d-flex justify-content-start">
+	<h1>
+		<%= currentUser.username.substring(0,100) %>'s profile
+	</h1>
+</div>
+	
+<div class= "container">
+	<div class="jumbotron">
+	
+		<div class="container">
+		  	<div class="row d-flex justify-content-between">
+				<div class="">
+					<h5>
+						Username : <%= currentUser.username.substring(0,46) %>
+					</h5>
+				</div>
+				<div class="">
+					<h5>
+						Email : <%= currentUser.email.substring(0,46) %>
+					</h5>
+				</div>
+				
+			</div>
+		</div>
+		<br>
+		<br><!-- rookie flex solutions-->
+		<br>
+		<h3>
+		<%= currentUser.username.substring(0,46) %>'s posts
+		</h3>
+		
+		
+		
+		
+		
+<div class="container">
+	<div class="row">
+		<% posts.reverse().forEach(function(post){ %>
+		
+		<div class="container rounded "style="background-image: linear-gradient(rgba(55,55,55,0.8), rgba(55,55,55,0.8)), url('<%=post.postimage%>');background-position: center;background-repeat: no-repeat;background-size: cover;height:auto;width:18rem;margin-top:15px;max-height:250px;">
+			<div >
+				<div class="col col-4" style="margin:2rem;">
+					<h3>
+						<%=post.postname.substring(0,46)%>
+					</h3>
+				</div>
+				<div class="row justify-content-around"style="margin-bottom:1rem;">
+					<%if(currentUser && post.author.id.equals(currentUser._id)|| currentUser && currentUser.isAdmin){%>
+						
+							<a href="/posts/<%=post._id%>/edit"><button class="btn btn-outline-secondary"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
+							<a href="/posts/<%=post._id%>"><button class=" btn btn-outline-secondary">open</button></a>
+							<form action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+								<button class="btn btn-outline-secondary">
+									<i style="font-size:15px;margin-top:0px;" class="fa fa-trash" aria-hidden="true"></i>
+								</button>
+							</form>
+							
+					<%}%>
+				</div>
+				
+			</div>
+		</div>
+		<%});%>
+	</div>
+</div>
+	
+		
+		
+		
+		
+	</div>
+</div>
+
+<a class="btn btn-secondary"href="/posts">back</a>
+
+
+<%- include("../partials/footer") %>

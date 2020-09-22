@@ -1,0 +1,43 @@
+<%- include("../partials/header") %>
+
+<div class="d-flex align-items-center flex-column">
+		
+		
+		
+		<form action="/register" method="POST">
+		<label for="exampleInputEmail1">Sign in</label>
+  <div class="form-group">
+    <input type="email" class="form-control"name="email"minlength = "5"maxlength = "40" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+	  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			</div>
+	 <div class="form-group">
+    <input type="text" name="username"maxlength = "40"minlength = "3"class="form-control" placeholder="Username">
+  </div>
+	
+	
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password"title="At least one small letter, one capital letter and minimum 6 characters" name="password"class="form-control"pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}"maxlength = "40" id="exampleInputPassword1" placeholder="Password">
+	  <small><em>Required:At least one small letter, one capital letter and minimum 6 characters</em></small>
+  </div>
+			
+  <button type="submit" class="btn btn-primary">Submit</button>
+			
+			<br>
+			<br>
+			<button class="btn btn-inverted btn-sm"data-toggle="collapse" data-target="#adminCode" aria-expanded="true" aria-controls="adminCode">
+				<i class="fa fa-terminal" aria-hidden="true"></i>admin
+			</button>
+			
+			<div class="collapse" id="adminCode">
+				<br>
+				<div class="form-group">
+    				<input type="text" name="adminCode"class="form-control" placeholder="admin Code">
+ 				 </div>
+			</div>
+		</form>
+</div>
+
+
+
+<%- include("../partials/footer") %>

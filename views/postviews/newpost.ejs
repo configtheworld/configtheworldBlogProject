@@ -1,0 +1,23 @@
+<%- include("../partials/header") %>
+
+<div class="container jumbotron">
+  <h1>Create New Post</h1>
+	
+	<form action="/posts/new" method="POST">
+		<div class="form-group">
+			<input type="text" name="postname" placeholder="Give it a Title" class="form-control" id="exampleFormControlInput1">
+		</div>
+		<div class="form-group">
+			<input type="text" name="postimage" placeholder=" (Optional) Online background image url and only from Unsplash.com " class="form-control" id="exampleFormControlInput1">
+		</div>
+		<div class="form-group">
+			<textarea type="textarea" name="postbody" rows="10" class="form-control" id="exampleFormControlInput1" placeholder="Your text here.."></textarea>
+		</div>
+		<button class="btn btn-success" type="submit">
+			Share!
+		</button>
+	</form>
+</div>
+
+
+<%- include("../partials/footer") %>
