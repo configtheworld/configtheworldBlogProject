@@ -19,7 +19,7 @@ const userRoutes		= require("./routes/index"),
 const path = require('path');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://" + process.envv.LINK,{
+mongoose.connect("mongodb+srv://" +process.env.LINK+"",{
 	useNewUrlParser:true,
 	useFindAndModify:false,
 	useUnifiedTopology:true,
