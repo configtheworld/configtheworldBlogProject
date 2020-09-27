@@ -19,7 +19,7 @@ const userRoutes		= require("./routes/index"),
 const path = require('path');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://config:BKDB20.07wd@congfigtheworldcluster1.99kuk.mongodb.net/configtheworld?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://" + process.envv.LINK,{
 	useNewUrlParser:true,
 	useFindAndModify:false,
 	useUnifiedTopology:true,
