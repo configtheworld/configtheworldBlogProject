@@ -19,7 +19,9 @@ nav{
 .scale{
 	margin-right: 15rem;
 }
-
+p{
+	white-space: break-spaces;
+}
 .navbar-brand {
 	margin-right:7px;
 	-webkit-animation-direction: normal;

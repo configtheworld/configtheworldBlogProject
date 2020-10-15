@@ -1,2 +1,0 @@
-
-LINK = config:BKDB20.07wd@congfigtheworldcluster1.99kuk.mongodb.net/configtheworld?retryWrites=true&w=majority
