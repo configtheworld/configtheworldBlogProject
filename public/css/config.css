@@ -22,6 +22,9 @@ nav{
 p{
 	white-space: break-spaces;
 }
+h5{
+	white-space: break-spaces;
+}
 .navbar-brand {
 	margin-right:7px;
 	-webkit-animation-direction: normal;
