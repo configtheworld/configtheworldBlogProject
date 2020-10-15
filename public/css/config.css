@@ -19,11 +19,9 @@ nav{
 .scale{
 	margin-right: 15rem;
 }
-p{
-	white-space: break-spaces;
-}
+
 h5{
-	white-space: break-spaces;
+	white-space: pre-line;
 }
 .navbar-brand {
 	margin-right:7px;
