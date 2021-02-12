@@ -43,7 +43,7 @@ router.post("/posts/new",isLoggedIn,isSafe,(req,res)=>{
 					console.log(data);
 				}
 			});
-			return res.redirect("/posts")
+			return res.redirect("/posts");
 		}
 	})
 })
