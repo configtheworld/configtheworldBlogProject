@@ -77,11 +77,6 @@ app.get('*', (req, res) => {
 	res.render("404");
 });
 
-/*
-app.listen(3002,()=>{
-	console.log("server is activated!!");
-});*/
-
 // heroku style listen
 
 var port = process.env.PORT || 3000;
