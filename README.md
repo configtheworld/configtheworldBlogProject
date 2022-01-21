@@ -2,7 +2,7 @@
 
 Its technology and lifestyle multi-user blog platform for developer community.
 
-#### _my first personal fully completed project_ 🥳
+_my first personal fully completed project_ 🥳
 
 # Live
 
