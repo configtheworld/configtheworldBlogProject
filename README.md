@@ -2,8 +2,6 @@
 
 Its technology and lifestyle multi-user blog platform for developer community.
 
-_my first personal fully completed project_ 🥳
-
 # Live
 
 🔗 [![Website Badge](https://img.shields.io/static/v1?label=configtheworld&message=blog&color=lightgrey)](https://configtheworld.herokuapp.com/)
@@ -18,3 +16,5 @@ _my first personal fully completed project_ 🥳
 ![MongoDB](https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb)
 ![Heroku](https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku)
 ![Git](https://img.shields.io/badge/-Git-black?style=flat-square&logo=git)
+
+_first fully completed personal project_ 🥳
