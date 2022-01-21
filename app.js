@@ -69,14 +69,11 @@ app.use((req, res, next) => {
 
 app.use(userRoutes);
 app.use(postRoutes);
-//app.use("/posts/:id/comments",commentRoutes);
 
 /*-------------404 PAGE-----------------*/
 app.get('*', (req, res) => {
   res.render('404');
 });
-
-// heroku style listen
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {

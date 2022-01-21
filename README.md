@@ -1,7 +1,11 @@
-# configtheworldBlogProject
+# configtheworldBlog
+
 Its technology and lifestyle multi-user blog platform for developer community.
 
-# Live 
+#### _my first personal fully completed project_ 🥳
+
+# Live
+
 🔗 [![Website Badge](https://img.shields.io/static/v1?label=configtheworld&message=blog&color=lightgrey)](https://configtheworld.herokuapp.com/)
 
 ##### ⚡ Technologies
